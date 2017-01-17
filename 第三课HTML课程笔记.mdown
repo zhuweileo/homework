@@ -1,0 +1,73 @@
+# 课程任务
+- HTML、XML、XHTML 有什么区别
+- 怎样理解 HTML 语义化
+- 怎样理解内容与样式分离的原则
+- 有哪些常见的meta标签
+- 文档声明的作用
+- 浏览器乱码解决方式
+- 写一篇文章简单介绍 HTML 表单的用法
+
+# 朱维
+##问题1：
+**什么是 XML?**
+- XML 指可扩展标记语言（EXtensible Markup Language）
+- XML 是一种标记语言，很类似 HTML
+- XML 的设计宗旨是传输数据，而非显示数据
+- XML 标签没有被预定义。您需要自行定义标签。
+- XML 被设计为具有自我描述性。
+- XML 是 W3C 的推荐标准
+**XHTML 是什么？**
+- XHTML 指可扩展超文本标签语言（EXtensible HyperText Markup Language）。
+- XHTML 的目标是取代 HTML。
+- XHTML 与 HTML 4.01 几乎是相同的。
+- XHTML 是更严格更纯净的 HTML 版本。
+- XHTML 是作为一种 XML 应用被重新定义的 HTML。
+- XHTML 是一个 W3C 标准。
+**XML与HTML 的主要差异**
+- XML 和 HTML 为不同的目的而设计：
+- XML 被设计为传输和存储数据，其焦点是数据的内容。
+- HTML 被设计用来显示数据，其焦点是数据的外观。
+- HTML 旨在显示信息，而 XML 旨在传输信息。
+**XHTML和HTML的主要差异**
+- XHTML 元素必须被正确地嵌套。
+- XHTML 元素必须被关闭。
+- 标签名必须用小写字母。
+- XHTML 文档必须拥有根元素。
+- 而HTML标签中，上诉都是允许的。
+
+## 问题2
+HTML语义化我理解为：让机器能读懂人写的代码有什么含义。举个简单的例子：我们都知道Excel里面一个个矩形空格组成的图形是表格，我们是通过视觉判断的，但是如果我们直接传递一张表格样式的图片给浏览器，它却不能识别出我们想要表达的是一个表格（或许以后可以）。于是有了`<table></table>`标签，浏览器可以轻松的识别此标签，看到 这个标签就知道里面包含的是表格的内容了。因为让浏览器去识别标签，远比让它去识别的内容要简单的多。浏览器一单可以轻松的读懂你网页的内容，那么它的处理效率会更快，同理搜索引擎也是一样的。
+
+## 问题3
+1.结构和样式的分离使得批量改变样式变得更加方便；
+2.可以提高搜索引擎的搜索效率，我们检索内容的时候往往是不考虑样式的；
+[参考文章](http://www.w3cn.org/article/tips/2004/43.html)
+
+## 问题4
+常见meta标签
+`<meta charset="utf-8">`
+使用utf-8的编码方式
+`<meta http-equiv="refresh" content="0;url=" />	`
+页面重定向和刷新：content内的数字代表时间（秒），既多少时间后刷新。如果加url,则会重定向到指定网页。
+`<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />`
+优先使用 IE 最新版本和 Chrome。
+`<meta http-equiv="Pragma" content="no-cache">`
+禁止浏览器从本地计算机的缓存中访问页面内容：这样设定，访问者将无法脱机浏览。
+`<meta name="keywords" content="your tags" />`
+页面关键词，每个网页应具有描述该网页内容的一组唯一的关键字。
+
+[参考文章](https://segmentfault.com/a/1190000002407912)
+
+## 问题5
+
+`<!DOCTYPE> `声明不是 HTML 标签；它是指示 web浏览器关于页面使用哪个 HTML 版本进行编写的指令。
+`<!DOCTYPE html>`是html5文档声明；
+`<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">`是html4的一种文档声明。
+
+## 问题6
+
+浏览器乱码的原因：html文档的编码方式和浏览器的解码方式不一样。
+解决方案：在html文档中加入`<meta charset="">`标签，声明编码方式。
+
+## 问题7
+[表单用法]()

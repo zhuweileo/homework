@@ -1,0 +1,182 @@
+## 1. 列表
+有序列表
+```
+<ol type="编号样式" start="编号起始值">
+	<li>有序列表</li>
+	<li>有序列表</li>
+	<li>有序列表</li>
+</ol>
+type 
+	1阿拉伯数字
+	a英文小写
+	A英文大写
+	i罗马数字小写
+	I罗马数字大写
+start起始编号
+	如:type=A,start=2,列表的起始编号为B
+```
+无序列表
+```
+<ul type="符号样式">
+	<li>无序列表</li>
+	<li>无序列表</li>
+	<li>无序列表</li>
+</ul>
+type
+	circle空心圆
+	disc圆点（默认）
+	square正方形
+```
+定义列表
+```
+<dl>
+	<dt>定义的名称</dt>
+	<dd>定义的描述</dd>
+</dl>
+```
+
+三种列表的区别及应用
+`<ol>`当描述的项目之间没有先后顺序时使用，如：电子产品分类、化妆品分类；
+`<ul>`但描述的项目之间有明确的先后顺序时使用，如：方法步骤、排名等；
+`<dl>`当项目需要进行解释或定义时使用，如：汉语释义、英文翻译、专业名词解释等；
+
+[无序列表嵌套的例子](http://js.jirengu.com/tilo/edit)
+
+嵌套的子列表都相对于父列表进行了缩进
+嵌套列表的默认type发生了变化
+
+[有序列表嵌套的例子](http://js.jirengu.com/xiha/edit)
+
+嵌套的子列表都相对于父列表进行了缩进
+
+****
+
+## 2.如何去除列表前面的点或者数字？
+使用如下CSS样式
+```
+ul{
+  list-style:none;
+}
+ol{
+  list-style:none;
+}
+dl{
+  list-style: none;
+}
+```
+[demo](http://js.jirengu.com/kewem/edit?html,css,output)
+注意：list-style: none;对dl无效果。
+
+***
+## 3. class 和 id 有什么区别？什么时候用 class 什么时候用 id？
+class 是类，一个标签可以拥有多个 class,一个class也可以被多个标签使用；
+id 是唯一的，一个标签只能拥有一个id,一个id也只能被一个标签使用；
+
+通常情况下标签都是用class，只有在大区块的划分时使用id。
+***
+## 4.块级元素、行内元素是什么？有什么区别？分别对应哪些常用标签？
+块级元素：display:block;
+
+行内元素：display:inline-block;
+
+
+区别：
+1.块级元素：独占一行，垂直排列
+行内元素：不独占一行，水平排列
+2. 块级元素：可以包含块级元素和行内元素
+行内元素：不可以包含块级元素
+3. 行内元素宽高无效，margin和padding上下无效
+
+常见块级元素
+```
+<div>
+<form>
+<p>
+<ul>
+```
+常见行内元素
+```
+<a>
+<span>
+<img>
+<input>
+```
+***
+## 5.`display: block`、`display: inline`、`display: inline-block`分别有什么作用?
+`display: block`把标签转换为块级元素
+`display: inline`把标签转换为行内元素
+`display: inline-block`把标签转换为行内块级元素
+***
+## 6.抄写代码
+[代码](http://js.jirengu.com/wehu/edit?html,css,output)
+
+上述代码描述了一个基本的网站布局框架，由上中下三栏组成，中间一栏又分为左右两栏。
+***
+## 7.如何理解 HTML CSS 语义化? 在平时写代码的过程中要注意哪些细节
+HTML CSS语义化的意义在于让浏览器能够更好的读懂网站上的各种资源。作为人类，当我们看到一个一个单元格组成的矩形表单时，我们能够识别为表格，我们是通过视觉的识别，然而浏览器并没有眼睛，所以它需要通过`<table></table>`标签去识别。当然我们也能够让浏览器像人一样去通过视觉的方式去识别，但那样的实现难度远比用标签大得多。
+
+在编写HTML文档时，即使效果相同，我们也应该将对应的内容放在对应的标签内，这样才能够让浏览器和搜索引擎更好的理解我们要表达的意思。
+***
+## 8.form表单有什么作用？有哪些常用的input 标签，分别有什么作用？
+form表单用于向服务器提交内容
+常用input标签
+`<input type="button">`
+按钮标签，可以用于制作特定功能的按键
+`<input type="radio">`
+单选框，可以和name相同的radio组成单选输入
+`<input type="text">`
+文本，可以输入一行文字，可用于用户名、邮箱等可见文本的输入
+`<input type="password">`
+密码，可输入一行用户不可见的文字，用于制作登录密码输入框
+`<input type="submit">`
+提交按钮，可以将form标签内的所有输入内容提交到指定位置
+`<input type="checkbox">`
+复选框，可以做多项选择框
+`<input type="hidden">`
+隐藏域，用户不可见，用于暂存数据，以及安全性校验
+
+form中非input标签
+`<textarea></textarea>`
+文本域，可以输入多行文本，用作评论区编辑区等
+```
+<select>
+	<option value=""></option>
+</select>
+```
+下拉列表，可以单选或多选，类似于单选框复选框，好处是节约空间
+***
+## 9.post和get方式的区别
+1.数据提交方式不同，get提交的数据可以在url中看到，post不能；
+2.get最多提交1k数据（浏览器限制），post理论上提交无限制（服务器限制）；
+3.get提交内容可以在浏览器历史记录中看到，安全性不好。
+***
+## 10.在input里，name 有什么作用？
+name作为input的名称，是input标签的标识，与input的value值成对出现，使后端能够识别value属于哪一个input。
+***
+## 11.区别
+`<button>提交</button>`
+按钮，具有按钮的样式，有点击效果，不能用于form表单的提交；
+`<a href="#" class="btn">提交</a>`
+超链接，可以点击，点击后跳转到href指定的地址；
+`<input type="submit" value="提交">`
+input提交按钮，可以用于提交同一form表单内的其它input内容。
+***
+## 12.radio如何分组
+name相同的input将被分为一组，同一组的radio只有一个可以被选中。
+***
+## 13.placeholder有什么作用？
+placeholder属性可以为文本类input提供提示信息，告诉用户需要输入的内容类型。
+***
+## 14.type=hidden隐藏域有什么作用？举例说明。
+暂存数据，安全性校验。
+
+例如：`<input type="hidden" value="abc">`该信息被隐藏为用户不可见，value=abc是网站开发者提前设置的，当网站服务器收到hidden标签提交的abc信息时，则认为该页面提交的信息时安全的，否则任务本次提交不安全。
+
+***
+## [代码](http://js.jirengu.com/soqa/edit)
+
+
+
+
+
+

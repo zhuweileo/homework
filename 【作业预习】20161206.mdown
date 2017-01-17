@@ -1,0 +1,56 @@
+# 朱维
+## 问题1
+text-align能使块级元素中的文字及行内元素水平居中。
+## 问题2
+IE盒模型
+height包含content的高度、上下padding值、上下border值
+width包含content的宽度、左右padding值、左右padding值
+
+标准盒模型
+height表示content的高度
+width表示content的宽度
+
+## 问题3
+作用是文档内的盒模型全部采用IE的盒模型
+
+## 问题4
+```
+.btn{
+  display:inline-block;
+  color:white;
+  padding:8px;
+  border-radius:3px;
+  background: #f36e41;
+  cursor:pointer;
+  text-decoration:none;
+  border:none;
+  box-sizing:content-box;
+  line-height:1.5;
+  font-size:15px
+}
+.btn:hover{
+  background: #c14d21;
+}
+.btn:active{
+  background: #e25f31;
+}
+.btn:focus{
+  outline:none;
+}
+```
+## 问题5
+inline-block元素可以设置宽高，不会占据父元素的整行，可以设置内外边距，既能包含行内元素又能包含内联元素。
+去掉缝隙：
+1.为需要去掉空隙的元素添加一个包裹层，在包裹层里面设置font-size=0px，这样可以使空格大小变为0px，然后再在内联元素内设置font-size为正常字体大小。
+2. 自己设计一款字体，将空格大小设计成0。该方法不推荐。
+
+高度不一样的inline-block元素使用`vertical-align:top;`对齐顶部。
+
+## 问题6
+CSS sprites是一种网页应用处理方式，它将网页制作过程中要到各种小图片都集中到一种大图中，再通过位置偏移的方法，在需要的位置呈现需要的图片。这样做的好处在于可以减少客户端的请求次数减小网页加载的延时。
+
+## 问题7
+1. `opacity:0`  占据空间，可以点击
+2. `display:none`不占据空间，无法点击
+3. `visibility:hidden`占据空间，无法点击
+如果父元素设置 `visibility:hidden`，但是子元素设置`visibility:visible`那么子元素依然可见。
